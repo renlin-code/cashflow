@@ -15,7 +15,7 @@
       </ResumeComp>
     </template>
     <template #movements>
-      <MovementsComp />
+      <MovementsComp :movements="movements" />
     </template>
   </LayoutComp>
 </template>
@@ -36,6 +36,32 @@ export default {
     return {
       label: null,
       amount: null,
+      movements: [
+        {
+          id: 0,
+          title: "Movimiento 1",
+          description: "Lorem ipsum dolor sit amen",
+          amount: 300,
+        },
+        {
+          id: 1,
+          title: "Movimiento 2",
+          description: "Lorem ipsum dolor sit amen",
+          amount: -100,
+        },
+        {
+          id: 2,
+          title: "Movimiento 3",
+          description: "Lorem ipsum dolor sit amen",
+          amount: 320,
+        },
+        {
+          id: 3,
+          title: "Movimiento 4",
+          description: "Lorem ipsum dolor sit amen",
+          amount: -150,
+        },
+      ],
     };
   },
 };
