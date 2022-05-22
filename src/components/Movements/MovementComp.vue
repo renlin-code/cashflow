@@ -23,7 +23,7 @@ const currencyFormatter = new Intl.NumberFormat("ru", {
 
 const props = defineProps({
   id: {
-    type: Number,
+    type: Date,
   },
   title: {
     type: String,

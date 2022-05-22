@@ -31,30 +31,23 @@
 
 <script setup>
 import { ref, toRefs, defineProps, computed } from "vue";
-
 const props = defineProps({
   amounts: {
     type: Array,
     default: () => [],
   },
 });
-
 const { amounts } = toRefs(props);
-
 const amountToPixels = (amount) => {
   const min = Math.min(...amounts.value);
   const max = Math.max(...amounts.value);
-
   const amountAbs = amount + Math.abs(min);
-  const minmax = Math.abs(min) + Math.abs(max);
-
+  const minmax = Math.abs(max) + Math.abs(min);
   return 200 - ((amountAbs * 100) / minmax) * 2;
 };
-
 const zero = computed(() => {
   return amountToPixels(0);
 });
-
 const points = computed(() => {
   const total = amounts.value.length;
   return amounts.value.reduce((points, amount, i) => {
@@ -63,10 +56,8 @@ const points = computed(() => {
     return `${points} ${x},${y}`;
   }, "0, 100");
 });
-
 const showPointer = ref(false);
 const pointer = ref(0);
-
 const tap = ({ target, touches }) => {
   showPointer.value = true;
   const elementWidth = target.getBoundingClientRect().width;
