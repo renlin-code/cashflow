@@ -10,7 +10,9 @@
         :total-amount="1000"
         :amount="amount"
       >
-        <template #graphic> graphic </template>
+        <template #graphic>
+          <GraphicComp :amounts="amounts" />
+        </template>
         <template #action>
           <ActionComp />
         </template>
@@ -28,6 +30,8 @@ import HeaderComp from "./HeaderComp.vue";
 import ResumeComp from "./Resume/IndexComp.vue";
 import ActionComp from "./ActionComp.vue";
 import MovementsComp from "./Movements/IndexComp.vue";
+import GraphicComp from "./Resume/GraphicComp.vue";
+
 export default {
   components: {
     LayoutComp,
@@ -35,11 +39,13 @@ export default {
     ResumeComp,
     ActionComp,
     MovementsComp,
+    GraphicComp,
   },
   data() {
     return {
       label: null,
       amount: null,
+      amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
       movements: [
         {
           id: 0,
