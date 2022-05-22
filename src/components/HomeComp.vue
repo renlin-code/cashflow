@@ -11,7 +11,9 @@
         :amount="amount"
       >
         <template #graphic> graphic </template>
-        <template #action> action </template>
+        <template #action>
+          <ActionComp />
+        </template>
       </ResumeComp>
     </template>
     <template #movements>
@@ -24,12 +26,14 @@
 import LayoutComp from "./LayoutComp.vue";
 import HeaderComp from "./HeaderComp.vue";
 import ResumeComp from "./Resume/IndexComp.vue";
+import ActionComp from "./ActionComp.vue";
 import MovementsComp from "./Movements/IndexComp.vue";
 export default {
   components: {
     LayoutComp,
     HeaderComp,
     ResumeComp,
+    ActionComp,
     MovementsComp,
   },
   data() {
