@@ -6,12 +6,12 @@
     <ModalComp v-show="showModal" @close="showModal = false">
       <form @submit.prevent="submit">
         <div class="field">
-          <label>Título</label>
-          <input type="text" v-model="title" />
+          <label>Título*</label>
+          <input required type="text" v-model="title" />
         </div>
         <div class="field">
-          <label>Monto</label>
-          <input type="number" v-model="amount" />
+          <label>Monto*</label>
+          <input required type="number" v-model="amount" />
         </div>
         <div class="field">
           <label>Descripción</label>
