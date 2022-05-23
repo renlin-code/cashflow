@@ -11,7 +11,7 @@
         :amount="amount"
       >
         <template #graphic>
-          <GraphicComp :amounts="amounts" />
+          <GraphicComp :amounts="amounts" @select="select" />
         </template>
         <template #action>
           <ActionComp @create="create" />
@@ -92,6 +92,10 @@ export default {
     },
     save() {
       localStorage.setItem("movements", JSON.stringify(this.movements));
+    },
+    select(el) {
+      console.log(el);
+      this.amount = el;
     },
   },
 };

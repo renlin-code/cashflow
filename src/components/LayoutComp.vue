@@ -25,33 +25,29 @@ const showMovements = ref(false);
 .resume,
 .movements {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 14px 0;
+  padding: 10px 0;
   box-sizing: border-box;
-}
-.header {
   position: fixed;
-  width: 100vw;
+  width: 100%;
 }
 .resume {
   min-height: 100vh;
 }
 .movements {
   z-index: 1;
-  position: absolute;
   flex-direction: column;
   bottom: 0;
-  width: 100vw;
   background-color: white;
-  box-shadow: 0 -8px 16px #e5e5e5;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.16);
   border-radius: 24px;
 }
 .movements .head {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 14px;
   width: 100%;
   box-sizing: border-box;
 }

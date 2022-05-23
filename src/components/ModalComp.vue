@@ -28,6 +28,7 @@ const close = () => {
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100vh;
   background-color: white;
 }
 .head {
@@ -42,5 +43,8 @@ p {
   margin: 0;
   font-size: 1.5rem;
   color: var(--brand-blue);
+}
+.body {
+  background-color: white;
 }
 </style>

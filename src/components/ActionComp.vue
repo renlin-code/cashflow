@@ -1,5 +1,7 @@
 <template>
-  <button @click="showModal = true">Agregar movimiento</button>
+  <button v-show="!showModal" @click="showModal = true">
+    Agregar movimiento
+  </button>
   <teleport to="#app">
     <ModalComp v-show="showModal" @close="showModal = false">
       <form @submit.prevent="submit">
@@ -39,7 +41,7 @@ import ModalComp from "./ModalComp.vue";
 
 const showModal = ref(false);
 const title = ref("");
-const amount = ref(0);
+const amount = ref(null);
 const description = ref("");
 const movementType = ref("Ingreso");
 const emit = defineEmits(["create"]);
@@ -55,7 +57,7 @@ const submit = () => {
   });
   title.value = "";
   description.value = "";
-  amount.value = 0;
+  amount.value = null;
   movementType.value = "Ingreso";
 };
 </script>
@@ -63,12 +65,12 @@ const submit = () => {
 <style scoped>
 button {
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   background-color: var(--brand-blue);
   border: none;
   width: 100%;
-  padding: 24px 60px;
-  border-radius: 60px;
+  padding: 22px 28px;
+  border-radius: 30px;
   box-sizing: border-box;
 }
 form {
