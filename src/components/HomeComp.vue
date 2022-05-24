@@ -5,7 +5,7 @@
     </template>
     <template #resume>
       <ResumeComp
-        :total-label="'Ahorro total'"
+        :total-label="'Total saving'"
         :label="label"
         :total-amount="totalAmount"
         :amount="amount"

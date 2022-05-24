@@ -1,34 +1,34 @@
 <template>
   <button v-show="!showModal" @click="showModal = true">
-    Agregar movimiento
+    Add new movement
   </button>
   <teleport to="#app">
     <ModalComp v-show="showModal" @close="showModal = false">
       <form @submit.prevent="submit">
         <div class="field">
-          <label>Título*</label>
+          <label>Title*</label>
           <input required type="text" v-model="title" />
         </div>
         <div class="field">
-          <label>Monto*</label>
+          <label>Amount*</label>
           <input required type="number" v-model="amount" />
         </div>
         <div class="field">
-          <label>Descripción</label>
+          <label>Description</label>
           <textarea rows="4" v-model="description" />
         </div>
         <div class="field">
           <label class="radio-label">
-            <input type="radio" v-model="movementType" value="Ingreso" />
-            <span>Ingreso</span>
+            <input type="radio" v-model="movementType" value="Income" />
+            <span>Income</span>
           </label>
           <label class="radio-label">
-            <input type="radio" v-model="movementType" value="Gasto" />
-            <span>Gasto</span>
+            <input type="radio" v-model="movementType" value="Expence" />
+            <span>Expence</span>
           </label>
         </div>
         <div class="action">
-          <button>Agregar movimiento</button>
+          <button>Add movement</button>
         </div>
       </form>
     </ModalComp>
@@ -43,7 +43,7 @@ const showModal = ref(false);
 const title = ref("");
 const amount = ref(null);
 const description = ref("");
-const movementType = ref("Ingreso");
+const movementType = ref("Income");
 const emit = defineEmits(["create"]);
 
 const submit = () => {
@@ -51,14 +51,14 @@ const submit = () => {
   emit("create", {
     title: title.value,
     description: description.value,
-    amount: movementType.value === "Ingreso" ? amount.value : -amount.value,
+    amount: movementType.value === "Income" ? amount.value : -amount.value,
     time: new Date(),
     id: new Date(),
   });
   title.value = "";
   description.value = "";
   amount.value = null;
-  movementType.value = "Ingreso";
+  movementType.value = "Income";
 };
 </script>
 

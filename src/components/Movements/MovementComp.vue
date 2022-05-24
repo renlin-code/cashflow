@@ -5,7 +5,7 @@
       <p>{{ description }}</p>
     </div>
     <div class="action">
-      <img src="@/assets/trash-icon.svg" alt="borrar" @click="remove" />
+      <img src="@/assets/trash-icon.svg" alt="Remove" @click="remove" />
       <p :class="{ red: isNegative, green: !isNegative }">
         {{ amountCurrency }}
       </p>

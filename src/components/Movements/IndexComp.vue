@@ -1,6 +1,6 @@
 <template>
   <div class="movements">
-    <h2 class="title">Historial</h2>
+    <h2 class="title">History</h2>
     <div class="content">
       <MovementComp
         :key="id"

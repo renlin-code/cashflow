@@ -22,6 +22,8 @@ header {
   justify-content: space-around;
   align-items: center;
   width: 100vw;
+  background-color: white;
+  z-index: 3;
 }
 img,
 span {

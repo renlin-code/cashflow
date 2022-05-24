@@ -1,8 +1,8 @@
 <template>
   <div class="modal">
     <div class="head">
-      <p>Nuevo movimiento</p>
-      <img @click="close" src="@/assets/close-icon.svg" alt="Cerrar" />
+      <p>New movement</p>
+      <img @click="close" src="@/assets/close-icon.svg" alt="Close" />
     </div>
     <div class="body">
       <slot></slot>

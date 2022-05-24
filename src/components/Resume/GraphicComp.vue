@@ -25,7 +25,7 @@
         y2="200"
       />
     </svg>
-    <p>Últimos 30 días</p>
+    <p>In the last 30 days</p>
   </div>
 </template>
 
